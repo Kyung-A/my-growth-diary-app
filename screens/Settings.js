@@ -1,11 +1,12 @@
 import React from "react";
 import ScrollWrap from "../components/ScrollWrap";
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
+import ModalContainer from "../components/Modal";
 
 export default ({ loading }) => (
   <ScrollWrap loading={loading}>
     <View>
-      <Text>설정</Text>
+      <ModalContainer />
     </View>
   </ScrollWrap>
 );

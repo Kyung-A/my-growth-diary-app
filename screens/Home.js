@@ -1,8 +1,9 @@
 import React from "react";
 import ScrollWrap from "../components/ScrollWrap";
 import styled from "styled-components/native";
-import { View, Text, Button, Dimensions } from "react-native";
-import { StackedBarChart } from "react-native-svg-charts";
+import { Dimensions, TouchableOpacity, Image, Text } from "react-native";
+import ChartContainer from "../components/Chart";
+import CanlendarWrap from "../components/Canlendar";
 
 const { height: HEIGHT } = Dimensions.get("window");
 
@@ -17,6 +18,7 @@ const TextWrap = styled.View`
   align-items: flex-start;
   justify-content: center;
   padding: 0px 20px;
+  padding-top: 50px;
 `;
 
 const UserName = styled.Text`
@@ -26,7 +28,7 @@ const UserName = styled.Text`
 
 const Challenge = styled.Text`
   color: #ffcb68;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 `;
 
@@ -36,40 +38,17 @@ const Day = styled.Text`
   font-weight: 500;
 `;
 
-const data = [
-  {
-    month: new Date(2015, 0, 1),
-    apples: 3840,
-    bananas: 1920,
-    cherries: 960,
-    dates: 400,
-    oranges: 400,
-  },
-  {
-    month: new Date(2015, 1, 1),
-    apples: 1600,
-    bananas: 1440,
-    cherries: 960,
-    dates: 400,
-  },
-  {
-    month: new Date(2015, 2, 1),
-    apples: 640,
-    bananas: 960,
-    cherries: 3640,
-    dates: 400,
-  },
-  {
-    month: new Date(2015, 3, 1),
-    apples: 3320,
-    bananas: 480,
-    cherries: 640,
-    dates: 400,
-  },
-];
+const SecContainer = styled.View`
+  position: relative;
+  height: ${HEIGHT / 1.4}px;
+`;
 
-const colors = ["#7b4173", "#a55194", "#ce6dbd", "#de9ed6"];
-const keys = ["apples", "bananas", "cherries", "dates"];
+const CanlendarContainer = styled.View`
+  position: absolute;
+  top: 80px;
+  background-color: #fff;
+  padding-top: 30px;
+`;
 
 export default ({ navigation, loading }) => (
   <ScrollWrap loading={loading}>
@@ -79,18 +58,24 @@ export default ({ navigation, loading }) => (
         <Challenge>현재목표 : 리액트 네이티브 앱 만들기</Challenge>
         <Day>2020.08.24 ~ 2020.09.30</Day>
       </TextWrap>
-      <StackedBarChart
-        style={{ height: 200 }}
-        keys={keys}
-        colors={colors}
-        data={data}
-        showGrid={false}
-        contentInset={{ top: 30, bottom: 30 }}
-      />
-      <Button
-        title="오늘의 일기 쓰기"
-        onPress={() => navigation.navigate("Diary")}
-      ></Button>
+      <ChartContainer />
+      <SecContainer>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Diary")}
+          style={{ alignItems: "center", zIndex: 1 }}
+        >
+          <Text style={{ fontSize: 16, color: "#394a54", fontWeight: "bold" }}>
+            오늘의 일기쓰기
+          </Text>
+          <Image
+            source={require("../assets/btn.png")}
+            style={{ aspectRatio: 0.6, resizeMode: "contain" }}
+          />
+        </TouchableOpacity>
+        <CanlendarContainer>
+          <CanlendarWrap />
+        </CanlendarContainer>
+      </SecContainer>
     </Container>
   </ScrollWrap>
 );
