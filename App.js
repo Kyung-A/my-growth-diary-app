@@ -13,7 +13,6 @@ const cacheImages = (images) =>
       return Asset.fromModule(image).downloadAsync();
     }
   });
-
 export default function App() {
   const [isReady, setIsReady] = useState(false);
   const loadAssets = () => {
