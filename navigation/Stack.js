@@ -12,6 +12,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Tabs from "./Tabs";
 import Diary from "../screens/Diary";
 import Splash from "../screens/Splash";
+import TargetRegistration from "../screens/TargetRegistration";
 
 const Stack = createStackNavigator();
 const AuthContext = React.createContext();
@@ -151,6 +152,11 @@ export default function userAuth({ navigation }) {
           <>
             <Stack.Screen name="Tabs" component={Tabs} />
             <Stack.Screen name="Diary" component={Diary} />
+            <Stack.Screen
+              name="TargetRegistration"
+              component={TargetRegistration}
+              options={{ headerShown: false }}
+            />
           </>
         )}
       </Stack.Navigator>

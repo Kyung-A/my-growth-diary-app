@@ -21,6 +21,7 @@ const Input = ({ placeholder, onChange, onSubmit }) => (
     numberOfLines={20}
     maxLength={1000}
     textAlignVertical={"top"}
+    style={{ height: 350 }}
   />
 );
 

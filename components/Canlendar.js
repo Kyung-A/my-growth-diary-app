@@ -81,9 +81,6 @@ const CanlendarWrap = () => {
         enableSwipeMonths={true}
         horizontal={true}
         pagingEnabled={true}
-        markedDates={{
-          "2020-09-10": { selected: true, marked: true, selectedColor: "blue" },
-        }}
       />
     </>
   );

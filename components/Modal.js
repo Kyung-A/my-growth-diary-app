@@ -44,7 +44,7 @@ const Wrap = styled.View`
   border-radius: 20px;
 `;
 
-const ModalContainer = ({ show, onClose, day }) => {
+const ModalContainer = ({ show, onClose }) => {
   return (
     <Modal
       isVisible={show}
@@ -58,7 +58,7 @@ const ModalContainer = ({ show, onClose, day }) => {
         <ContainerWrap>
           <Container>
             <TextWrap>
-              <Day>{day}</Day>
+              <Day>2020.08.11</Day>
               <Challenge>리액트 네이티브 앱 만들기</Challenge>
               <Chart>
                 <Text style={{ color: "#e96853", fontSize: 18 }}>

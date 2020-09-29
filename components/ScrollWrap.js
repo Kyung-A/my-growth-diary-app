@@ -16,7 +16,7 @@ const ScrollWrap = ({ loading, children, contentContainerStyle }) => (
 );
 
 ScrollWrap.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
   children: PropTypes.node.isRequired,
   contentContainerStyle: PropTypes.object,
 };

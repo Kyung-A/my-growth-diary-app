@@ -55,7 +55,11 @@ export default ({ navigation, loading }) => (
     <Container>
       <TextWrap>
         <UserName>null님 안녕하세요!</UserName>
-        <Challenge>현재목표 : 리액트 네이티브 앱 만들기</Challenge>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("TargetRegistration")}
+        >
+          <Challenge>목표를 등록해주세요.</Challenge>
+        </TouchableOpacity>
         <Day>2020.08.24 ~ 2020.09.30</Day>
       </TextWrap>
       <ChartContainer />

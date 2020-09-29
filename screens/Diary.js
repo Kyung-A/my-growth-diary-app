@@ -42,6 +42,7 @@ export default ({ loading, onChange, onSubmit }) => (
         placeholder={"오늘 하루 목표를 달성하기 위해 했던 이야기들을 써보세요!"}
         onChange={onChange}
         onSubmit={onSubmit}
+        style={{ height: 500 }}
       />
       <TouchableOpacity
         style={{
