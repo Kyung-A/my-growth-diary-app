@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my-growth-diary-app",
-    "slug": "my-growth-diary-app",
+    "name": "my-diary-app",
+    "slug": "my-diary-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "React Native와 Expo를 이용하여 만든 일기 앱 입니다. 주요 기능은 목표 등록, 일기 쓰기 입니다.",
+    "githubUrl": "https://github.com/Kyung-A/my-growth-diary-app"
   }
 }
